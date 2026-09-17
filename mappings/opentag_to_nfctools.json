@@ -1,0 +1,33 @@
+{
+  "mapping_id": "opentag_v2_to_nfctools_v1",
+  "source_schema": "OpenTag v2.003",
+  "target_schema": "NFC Tools Desktop v1.0",
+  "field_rules": [
+    {
+      "source_field": "Target Print Temperature",
+      "target_field": "print_temp_c",
+      "data_type": "int",
+      "source_spec": { "type": "int_scale", "scale": 5.0, "bytes": 1, "signed": false },
+      "target_spec": { "type": "int", "scale": 1.0, "bytes": 2, "signed": false },
+      "validation": { "min": 0, "max": 450, "on_overflow": "clamp" },
+      "default_fallback": 200
+    },
+    {
+      "source_field": "Filament Manufacturer",
+      "target_field": "vendor_name",
+      "data_type": "string",
+      "source_spec": { "encoding": "utf-8", "max_bytes": 16 },
+      "target_spec": { "encoding": "ascii", "max_bytes": 32 },
+      "validation": { "on_overflow": "truncate" },
+      "default_fallback": "Generic"
+    },
+    {
+      "source_field": "Color 1 Hex",
+      "target_field": "color_rgba",
+      "data_type": "color",
+      "source_spec": { "format": "rgba_bytes", "bytes": 4 },
+      "target_spec": { "format": "hex_string", "prefix": "#" },
+      "default_fallback": "#FF0000FF"
+    }
+  ]
+}

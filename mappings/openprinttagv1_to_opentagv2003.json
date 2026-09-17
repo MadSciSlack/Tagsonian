@@ -1,0 +1,81 @@
+{
+  "mapping_id": "openprinttagv1_to_opentagv2003",
+  "source_schema": "openprinttag_v1",
+  "target_schema": "opentag_v2_003",
+  "field_rules": [
+    {
+      "source_field": "brand_name",
+      "target_field": "Filament Manufacturer",
+      "data_type": "string",
+      "default_fallback": "Generic"
+    },
+    {
+      "source_field": "material_name",
+      "target_field": "Base Material Name",
+      "data_type": "string",
+      "default_fallback": "PLA"
+    },
+    {
+      "source_field": "material_class",
+      "target_field": "Base Material Name",
+      "data_type": "string",
+      "default_fallback": "PLA"
+    },
+    {
+      "source_field": "primary_color",
+      "target_field": "Primary Color",
+      "data_type": "color",
+      "source_spec": { "format": "hex_string", "prefix": "#" },
+      "target_spec": { "format": "rgba_bytes" },
+      "default_fallback": [255, 170, 187, 255]
+    },
+    {
+      "source_field": "transmission_distance",
+      "target_field": "Transmission Distance",
+      "data_type": "float",
+      "default_fallback": 0.0
+    },
+    {
+      "source_field": "tags",
+      "target_field": "Material Tags",
+      "data_type": "string_list",
+      "default_fallback": []
+    },
+    {
+      "source_field": "min_print_temperature",
+      "target_field": "Min Printing Temp",
+      "data_type": "int",
+      "default_fallback": 190
+    },
+    {
+      "source_field": "max_print_temperature",
+      "target_field": "Max Printing Temp",
+      "data_type": "int",
+      "default_fallback": 230
+    },
+    {
+      "source_field": "min_bed_temperature",
+      "target_field": "Min Bed Temp",
+      "data_type": "int",
+      "default_fallback": 50
+    },
+    {
+      "source_field": "max_bed_temperature",
+      "target_field": "Max Bed Temp",
+      "data_type": "int",
+      "default_fallback": 70
+    },
+    {
+      "source_field": "density",
+      "target_field": "Density",
+      "data_type": "float",
+      "default_fallback": 1.24
+    },
+    {
+      "source_field": "empty_container_weight",
+      "target_field": "Spool Tare Weight",
+      "data_type": "float",
+      "default_fallback": 200.0
+    }
+  ]
+}

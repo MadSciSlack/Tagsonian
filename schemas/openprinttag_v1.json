@@ -1,0 +1,181 @@
+{
+  "schema_id": "openprinttag_v1",
+  "display_name": "OpenPrintTag v1.0",
+  "protocol": "openprinttag",
+  "version": "1.0",
+  "ndef_type": "application/json",
+  "hardware": {
+    "supported_chips": ["NTAG213", "NTAG215", "NTAG216", "ST25TN01K", "ST25TN02K"],
+    "min_memory_bytes": 180
+  },
+  "fields": [
+    {
+      "name": "brand_name",
+      "display_label": "Brand Name",
+      "type": "utf8",
+      "max_bytes": 32,
+      "default": "Generic"
+    },
+    {
+      "name": "material_name",
+      "display_label": "Material Name",
+      "type": "utf8",
+      "max_bytes": 32,
+      "default": "PLA"
+    },
+    {
+      "name": "material_abbreviation",
+      "display_label": "Material Abbreviation",
+      "type": "utf8",
+      "max_bytes": 12,
+      "default": "PLA"
+    },
+    {
+      "name": "material_class",
+      "display_label": "Material Class",
+      "type": "enum",
+      "default": "filament"
+    },
+    {
+      "name": "material_type",
+      "display_label": "Material Type",
+      "type": "enum",
+      "default": "PLA"
+    },
+    {
+      "name": "primary_color",
+      "display_label": "Primary Color",
+      "type": "color_hex",
+      "format": "#RRGGBBAA",
+      "default": "#FFAABBFF"
+    },
+    {
+      "name": "min_print_temperature",
+      "display_label": "Min Printing Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default": 190
+    },
+    {
+      "name": "max_print_temperature",
+      "display_label": "Max Printing Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default": 230
+    },
+    {
+      "name": "preheat_temperature",
+      "display_label": "Preheat Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 170
+    },
+    {
+      "name": "min_bed_temperature",
+      "display_label": "Min Bed Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 50
+    },
+    {
+      "name": "max_bed_temperature",
+      "display_label": "Max Bed Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 70
+    },
+    {
+      "name": "min_chamber_temperature",
+      "display_label": "Min Chamber Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 0
+    },
+    {
+      "name": "max_chamber_temperature",
+      "display_label": "Max Chamber Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 0
+    },
+    {
+      "name": "drying_temperature",
+      "display_label": "Drying Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "default": 55
+    },
+    {
+      "name": "drying_time",
+      "display_label": "Drying Time",
+      "type": "int",
+      "unit": "hours",
+      "bytes": 2,
+      "default": 6
+    },
+    {
+      "name": "filament_diameter_v2",
+      "display_label": "Filament Diameter",
+      "type": "int_scale",
+      "scale": 0.001,
+      "unit": "mm",
+      "default": 1750
+    },
+    {
+      "name": "density",
+      "display_label": "Density",
+      "type": "float",
+      "unit": "g/cm³",
+      "default": 1.24
+    },
+    {
+      "name": "nominal_netto_full_weight",
+      "display_label": "Nominal Net Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 1000.0
+    },
+    {
+      "name": "actual_netto_full_weight",
+      "display_label": "Actual Net Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 1000.0
+    },
+    {
+      "name": "empty_container_weight",
+      "display_label": "Empty Spool Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 200.0
+    },
+    {
+      "name": "instance_uuid",
+      "display_label": "Instance UUID",
+      "type": "uuid",
+      "default": ""
+    },
+    {
+      "name": "material_uuid",
+      "display_label": "Material UUID",
+      "type": "uuid",
+      "default": ""
+    },
+    {
+      "name": "gtin",
+      "display_label": "GTIN Barcode",
+      "type": "utf8",
+      "default": ""
+    }
+  ]
+}
