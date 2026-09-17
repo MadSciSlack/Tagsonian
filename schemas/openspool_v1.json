@@ -1,0 +1,52 @@
+{
+  "schema_id": "openspool_v1",
+  "display_name": "OpenSpool v1.0",
+  "protocol": "openspool",
+  "version": "1.0",
+  "ndef_type": "application/json",
+  "hardware": {
+    "supported_chips": ["NTAG215", "NTAG216"],
+    "min_memory_bytes": 504
+  },
+  "fields": [
+    {
+      "name": "brand",
+      "display_label": "Filament Manufacturer",
+      "type": "utf8",
+      "max_bytes": 32,
+      "default": "Generic"
+    },
+    {
+      "name": "type",
+      "display_label": "Base Material Type",
+      "type": "utf8",
+      "max_bytes": 16,
+      "default": "PLA"
+    },
+    {
+      "name": "color_hex",
+      "display_label": "Primary Color Hex",
+      "type": "color_hex",
+      "format": "RRGGBB",
+      "default": "FFAABB"
+    },
+    {
+      "name": "min_temp",
+      "display_label": "Min Printing Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default": 190
+    },
+    {
+      "name": "max_temp",
+      "display_label": "Max Printing Temp",
+      "type": "int",
+      "unit": "°C",
+      "bytes": 2,
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default": 230
+    }
+  ]
+}

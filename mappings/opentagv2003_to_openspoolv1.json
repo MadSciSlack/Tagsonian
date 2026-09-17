@@ -1,0 +1,47 @@
+{
+  "mapping_id": "opentag_v2_to_openspool_v1",
+  "source_schema": "opentag_v2_003",
+  "target_schema": "openspool_v1",
+  "field_rules": [
+    {
+      "source_field": "Filament Manufacturer",
+      "target_field": "brand",
+      "data_type": "string",
+      "target_spec": { "max_bytes": 32 },
+      "default_fallback": "Generic"
+    },
+    {
+      "source_field": "Base Material Name",
+      "target_field": "type",
+      "data_type": "string",
+      "target_spec": { "max_bytes": 16 },
+      "default_fallback": "PLA"
+    },
+    {
+      "source_field": "Primary Color",
+      "target_field": "color_hex",
+      "data_type": "color",
+      "source_spec": { "format": "rgba_bytes" },
+      "target_spec": { "format": "hex_string", "prefix": "" },
+      "default_fallback": "FFFFFF"
+    },
+    {
+      "source_field": "Min Printing Temp",
+      "target_field": "min_temp",
+      "data_type": "int",
+      "source_spec": { "scale": 1.0 },
+      "target_spec": { "scale": 1.0, "bytes": 2 },
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default_fallback": 200
+    },
+    {
+      "source_field": "Max Printing Temp",
+      "target_field": "max_temp",
+      "data_type": "int",
+      "source_spec": { "scale": 1.0 },
+      "target_spec": { "scale": 1.0, "bytes": 2 },
+      "validation": { "min": 0, "max": 500, "on_overflow": "clamp" },
+      "default_fallback": 230
+    }
+  ]
+}
