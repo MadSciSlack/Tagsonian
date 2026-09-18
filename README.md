@@ -4,7 +4,7 @@ Tagsonian is an NFC reader / writer, tag decoder, tag translator, tag format edi
 ## Main Features
 - Reads multiple RFID tag standards including OpenTag3D V2.x, OpenSpool V1, and OpenPrintTag V1.
 - Supports ACR122U and compatible readers, more to be added.
-- Built-in chip specs for NTAG NFC chips. The app knows what will fit and what is supported by what standard.
+- Built-in chip specs for NTAG, ST25TN01K, and ST25TN02K NFC. The app knows what will fit and what is supported by what standard.
 - Fully parses and translates the information to a readable format.
 - Writes directly to RFID tags in the OpenTag3D v2.x standard.
 - Writes to multiple JSON and other tag formats including NFC Tools Desktop JSON.
