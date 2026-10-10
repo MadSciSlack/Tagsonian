@@ -1,0 +1,237 @@
+{
+  "schema_id": "openprinttag_v1",
+  "display_name": "OpenSlackPrintTag v1.0",
+  "protocol": "openprinttag",
+  "version": "1.0",
+  "ndef_type": "application/json",
+  "hardware": {
+    "supported_chips": [
+      "NTAG213",
+      "NTAG215",
+      "NTAG216",
+      "ST25TN01K",
+      "ST25TN02K"
+    ],
+    "min_memory_bytes": 180
+  },
+  "fields": [
+    {
+      "name": "brand_name",
+      "display_label": "Brand Name",
+      "type": "utf8",
+      "max_bytes": 32,
+      "default": "Generic",
+      "start": "0x00"
+    },
+    {
+      "name": "material_name",
+      "display_label": "Material Name",
+      "type": "utf8",
+      "max_bytes": 32,
+      "default": "PLA",
+      "start": "0x20"
+    },
+    {
+      "name": "material_abbreviation",
+      "display_label": "Material Abbreviation",
+      "type": "utf8",
+      "max_bytes": 12,
+      "default": "PLA",
+      "start": "0x40"
+    },
+    {
+      "name": "material_class",
+      "display_label": "Material Class",
+      "type": "enum",
+      "default": "filament",
+      "start": "0x4C"
+    },
+    {
+      "name": "material_type",
+      "display_label": "Material Type",
+      "type": "enum",
+      "default": "PLA",
+      "start": "0x4D"
+    },
+    {
+      "name": "primary_color",
+      "display_label": "Primary Color",
+      "type": "color_hex",
+      "format": "#RRGGBBAA",
+      "default": "#FFAABBFF",
+      "start": "0x4E"
+    },
+    {
+      "name": "min_print_temperature",
+      "display_label": "Min Printing Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "validation": {
+        "min": 0,
+        "max": 500,
+        "on_overflow": "clamp"
+      },
+      "default": 190,
+      "start": "0x4F"
+    },
+    {
+      "name": "max_print_temperature",
+      "display_label": "Max Printing Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "validation": {
+        "min": 0,
+        "max": 500,
+        "on_overflow": "clamp"
+      },
+      "default": 230,
+      "start": "0x50"
+    },
+    {
+      "name": "preheat_temperature",
+      "display_label": "Preheat Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 170,
+      "start": "0x51"
+    },
+    {
+      "name": "min_bed_temperature",
+      "display_label": "Min Bed Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 50,
+      "start": "0x52"
+    },
+    {
+      "name": "max_bed_temperature",
+      "display_label": "Max Bed Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 70,
+      "start": "0x53"
+    },
+    {
+      "name": "min_chamber_temperature",
+      "display_label": "Min Chamber Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 0,
+      "start": "0x54"
+    },
+    {
+      "name": "max_chamber_temperature",
+      "display_label": "Max Chamber Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 0,
+      "start": "0x55"
+    },
+    {
+      "name": "drying_temperature",
+      "display_label": "Drying Temp",
+      "type": "int",
+      "unit": "\u00b0C",
+      "bytes": 2,
+      "default": 55,
+      "start": "0x56"
+    },
+    {
+      "name": "drying_time",
+      "display_label": "Drying Time",
+      "type": "int",
+      "unit": "hours",
+      "bytes": 2,
+      "default": 6,
+      "start": "0x57"
+    },
+    {
+      "name": "filament_diameter_v2",
+      "display_label": "Filament Diameter",
+      "type": "int_scale",
+      "scale": 0.001,
+      "unit": "mm",
+      "default": 1750,
+      "start": "0x58"
+    },
+    {
+      "name": "density",
+      "display_label": "Density",
+      "type": "float",
+      "unit": "g/cm\u00b3",
+      "default": 1.24,
+      "start": "0x59"
+    },
+    {
+      "name": "nominal_netto_full_weight",
+      "display_label": "Nominal Net Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 1000.0,
+      "start": "0x5A"
+    },
+    {
+      "name": "actual_netto_full_weight",
+      "display_label": "Actual Net Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 1000.0,
+      "start": "0x5B"
+    },
+    {
+      "name": "empty_container_weight",
+      "display_label": "Empty Spool Weight",
+      "type": "float",
+      "unit": "g",
+      "default": 200.0,
+      "start": "0x5C"
+    },
+    {
+      "name": "instance_uuid",
+      "display_label": "Instance UUID",
+      "type": "uuid",
+      "default": "",
+      "start": "0x5D"
+    },
+    {
+      "name": "material_uuid",
+      "display_label": "Material UUID",
+      "type": "uuid",
+      "default": "",
+      "start": "0x5E"
+    },
+    {
+      "name": "gtin",
+      "display_label": "GTIN Barcode",
+      "type": "utf8",
+      "max_bytes": 14,
+      "default": "",
+      "start": "0x5F"
+    },
+    {
+      "name": "Monkey",
+      "id": "monkey",
+      "type": "utf8",
+      "start": "0x01",
+      "length": 1,
+      "max_bytes": 1,
+      "unit": "boolean",
+      "scaling": 1.0,
+      "default": "1",
+      "examples": [
+        "1 = Monkey",
+        "0 = No Monkey"
+      ],
+      "description": "Ooh! Aah!",
+      "is_custom": true
+    }
+  ],
+  "official_format_lock": false
+}
